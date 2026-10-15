@@ -1,3 +1,27 @@
+# Paje Farm Houses — crawler policy
+# Live search & answer-engine retrieval bots are explicitly allowed below.
+# Training-only crawlers inherit the general rule at the bottom.
+# OWNER TODO: to opt out of AI training crawls, add Disallow rules for
+# GPTBot, CCBot and Google-Extended (this may also reduce AI citations).
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
 User-agent: *
 Allow: /
 
