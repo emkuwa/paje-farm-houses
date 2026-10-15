@@ -57,7 +57,11 @@ for (const pg of pages) {
   mkdirSync(dir, { recursive: true });
   writeFileSync(join(dir, 'index.html'), pg.html);
 }
-const urls = [{ loc: '/', pr: '1.0' }, ...pages.map((p) => ({ loc: p.loc, pr: '0.8' }))];
+const urls = [{ loc: '/', pr: '1.0', img: '/assets/paje-farm-houses-garden-dining-hero.jpg' }, ...pages.map((p) => ({ loc: p.loc, pr: '0.8' }))];
 writeFileSync(join(ROOT, 'sitemap.xml'),
-  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `  <url>\n    <loc>${SITE}${u.loc}</loc>\n    <lastmod>${TODAY}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>${u.pr}</priority>\n  </url>`).join('\n')}\n</urlset>\n`);
+  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n${urls.map((u) => {
+    const item = [...data.dishes.map((d) => ({ ...d, _loc: `/menu/${d.slug}/` })), ...data.experiences.map((d) => ({ ...d, _loc: `/experiences/${d.slug}/` }))].find((d) => d._loc === u.loc);
+    const img = item ? `\n    <image:image>\n      <image:loc>${SITE}${item.image}</image:loc>\n      <image:title>${esc(item.name)}</image:title>\n    </image:image>` : (u.img ? `\n    <image:image>\n      <image:loc>${SITE}${u.img}</image:loc>\n    </image:image>` : '');
+    return `  <url>\n    <loc>${SITE}${u.loc}</loc>\n    <lastmod>${TODAY}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>${u.pr}</priority>${img}\n  </url>`;
+  }).join('\n')}\n</urlset>\n`);
 console.log(`generated ${pages.length} pages + sitemap (${TODAY})`);
