@@ -9,7 +9,8 @@
   "plusCode": "PGJC+CG",
   "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=PGJC%2BCG+Paje+Zanzibar",
   "googleBusinessProfileUrl": "https://share.google/OVQm5wAHdnRMCpDGL",
-  "googleReviewUrl": "https://share.google/OVQm5wAHdnRMCpDGL"
+  "googleReviewUrl": "https://share.google/OVQm5wAHdnRMCpDGL",
+  "whatsapp1": "https://wa.me/255778621086"
  },
  "dishes": [
   {
@@ -50,7 +51,7 @@
     },
     {
      "q": "How do I order Samaki wa Kupaka in Paje?",
-     "a": "Send a restaurant reservation enquiry to Paje Farm Houses at info@pajefarmhouses.com or +255 778 621 086 and mention the dish."
+     "a": "Send a restaurant reservation enquiry to Paje Farm Houses at info@pajefarmhouses.com or +255 778 621 086, and mention the dish."
     }
    ],
    "intent": "Restaurant reservation",
@@ -138,7 +139,7 @@
     },
     {
      "q": "How do I know which meats are available?",
-     "a": "Mention nyama pori in your enquiry to info@pajefarmhouses.com or +255 778 621 086 and the team confirms the day's meats, dishes and dietary information."
+     "a": "Mention nyama pori in your enquiry to info@pajefarmhouses.com or +255 778 621 086, and the team confirms the day's meats, dishes and dietary information."
     }
    ],
    "intent": "Restaurant reservation",
