@@ -15,4 +15,5 @@ My Plant is a demo. No database, payments or live plant records are connected.
 Fonts load from Google Fonts; remaining stock imagery may need internet access.
 The four generated images are included locally.
 
-Published project: https://paje-farm-houses.emkuwa.chatgpt.site
+Published project: https://www.pajefarmhouses.com
+(Older ChatGPT-hosted preview URL is login-gated and no longer public.)

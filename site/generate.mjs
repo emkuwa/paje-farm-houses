@@ -60,7 +60,7 @@ for (const pg of pages) {
   mkdirSync(dir, { recursive: true });
   writeFileSync(join(dir, 'index.html'), pg.html);
 }
-const urls = [{ loc: '/', pr: '1.0', img: '/assets/paje-farm-houses-garden-dining-hero.jpg' }, ...pages.map((p) => ({ loc: p.loc, pr: p.loc.startsWith('/experiences/') ? '0.9' : '0.8' }))];
+const urls = [{ loc: '/', pr: '1.0', img: '/assets/paje-farm-houses-garden-dining-hero.webp' }, ...pages.map((p) => ({ loc: p.loc, pr: p.loc.startsWith('/experiences/') ? '0.9' : '0.8' }))];
 writeFileSync(join(ROOT, 'sitemap.xml'),
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n${urls.map((u) => {
     const item = [...data.dishes.map((d) => ({ ...d, _loc: `/menu/${d.slug}/` })), ...data.experiences.map((d) => ({ ...d, _loc: `/experiences/${d.slug}/` }))].find((d) => d._loc === u.loc);
