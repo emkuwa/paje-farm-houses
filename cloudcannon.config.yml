@@ -1,0 +1,22 @@
+# CloudCannon configuration
+# Docs: https://cloudcannon.com/documentation/
+source: /
+paths:
+  uploads: assets
+  static: .
+  # Where uploaded images are stored (relative to source)
+collections_config:
+  pages:
+    path: "*.html"
+    url: "/[slug]/"
+# Enable the Visual Editor for HTML files
+visual_editor:
+  previews:
+    - index
+# Allow editing image fields
+_inputs:
+  image:
+    type: image
+    options:
+      accepts_mime_types: ["image/*", "video/*"]
+"
