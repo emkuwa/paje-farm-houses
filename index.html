@@ -51,4 +51,4 @@ document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click'
 function trackPaje(name,params={}){if(typeof window.gtag==='function')window.gtag('event',name,params);}
 document.addEventListener('click',function(event){const a=event.target.closest('a[href]');if(!a)return;const href=a.getAttribute('href')||'';if(href.startsWith('tel:'))trackPaje('phone_click',{contact_location:a.closest('footer')?'footer':a.closest('.bottom-nav')?'mobile_nav':'page'});else if(href.includes('wa.me/'))trackPaje('whatsapp_click',{contact_location:a.closest('footer')?'footer':a.closest('.bottom-nav')?'mobile_nav':'page'});});
 </script>
-</body></html>
+<script type="module" src="/assets/visual-editor.js"></script></body></html>
